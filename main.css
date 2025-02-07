@@ -32,7 +32,7 @@
 }
 
 @keyframes trunk_blooming {
-  0%   { height: 20px; }
+  0%   { height: 0px; }
 
   100% { height: 210px; }
 }
@@ -243,7 +243,7 @@ h1 {
 
 .trunk {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     width: 5px;
     height: 210px;
