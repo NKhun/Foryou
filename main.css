@@ -315,5 +315,6 @@ p {
   text-decoration: none;
   color: white;
   z-index: 2;
-  animation: bipping 4s infinite;
+  animation: bipping 4s infinite,
+             fadeInBlur 3s ease-in;
 }
