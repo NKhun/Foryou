@@ -43,7 +43,7 @@
 
 @keyframes fadeInBlur {
   0% {
-    filter: blur(8px);
+    filter: blur(6px);
     opacity: 0;
     transform: translateY(-20px);
   }
