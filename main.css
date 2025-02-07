@@ -120,7 +120,7 @@ h1 {
 
 .petal .one {
     transform: rotate(-10deg);
-    top: 43%;
+    top: 39%;
     left: 32%;
     width: 56px;
     height: 72px;
@@ -140,7 +140,7 @@ h1 {
 
 .petal .two {
     transform: rotate(10deg);
-    top: 43%;
+    top: 39%;
     right: 29%;
     width: 60px;
     height: 72px;
@@ -159,7 +159,7 @@ h1 {
 
 .petal .three {
     transform: rotate(-10deg);
-    top: 39%;
+    top: 35%;
     left: 35%;
     width: 60px;
     height: 90px;
@@ -178,7 +178,7 @@ h1 {
 
 .petal .four {
     transform: rotate(10deg);
-    top: 39%;
+    top: 35%;
     right: 31%;
     width: 60px;
     height: 89px;
@@ -197,7 +197,7 @@ h1 {
 
 .petal .five {
     transform: rotate(8deg);
-    top: 36%;
+    top: 32%;
     left: 39%;
     width: 60px;
     height: 89px;
@@ -216,7 +216,7 @@ h1 {
 
 .petal .six {
     transform: rotate(-12deg);
-    top: 37%;
+    top: 33%;
     right: 36%;
     width: 60px;
     height: 80px;
@@ -236,7 +236,7 @@ h1 {
 
 .petal .eight {
   transform: rotate(12deg);
-  top: 35%;
+  top: 31%;
   left: 43%;
   width: 50px;
   height: 53px;
@@ -255,7 +255,7 @@ h1 {
 
 .trunk {
     position: absolute;
-    top: 55%;
+    top: 52%;
     left: 50%;
     width: 5px;
     height: 210px;
@@ -307,7 +307,6 @@ h1 {
   justify-content: center;
   height: 10vh;
   width: 100%;
-  margin-top: 8vh;
 }
 
 p {
