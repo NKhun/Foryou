@@ -16,15 +16,14 @@
     100% { transform: rotate(5deg); }
 }
 
-@keyframes trunk_blooming {
-    0%   { transform: scaleY(0); }
-    100% { transform: scaleY(1); }
+@keyframes blooming {
+    0%   { height: 20px; 
+           transform-origin: bottom; }
+
+    100% { height: 60vh; }
 }
 
-@keyframes petal_blooming {
-    0%   { transform: scaleY(0); }
-    100% { transform: scaleY(1); }
-}
+
 
 body {
     background-color: #1e1e1e;
@@ -49,6 +48,7 @@ body {
     position: relative;
     height: 60vh;
     width: 100%;
+    animation: blooming 5s ease-in-out;
 }
 
 .petal .one, .two, .three, .four, .five, .six, .seven, .eight {
@@ -73,8 +73,8 @@ body {
     border-radius: 3px 50px 3px 40px;
     z-index: 8;
     animation: sway1 5s infinite;
-
 }
+
 
 .petal .two {
     transform: rotate(10deg);
@@ -92,7 +92,6 @@ body {
     border-radius: 60px 5px 40px 20px;
     z-index: 7;
     animation: sway1 5s infinite;
-
 }
 
 .petal .three {
@@ -111,7 +110,6 @@ body {
     border-radius: 5px 100px 30px 75px;
     z-index: 5;
     animation: sway2 5s infinite;
-
 }
 
 .petal .four {
@@ -203,7 +201,6 @@ body {
     box-shadow: 0 0 6px rgb(153, 212, 98);
     z-index: 0;
     transform-origin: bottom;
-    animation: trunk_blooming 5s ease-in-out;
 }
 
 .button_container {
