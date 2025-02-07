@@ -314,7 +314,7 @@ p {
   font-weight: bold;
   text-decoration: none;
   color: white;
-  z-index: 2;
+  z-index: 0;
   animation: bipping 4s infinite,
              fadeInBlur 3s ease-in;
 }
