@@ -1,0 +1,231 @@
+@keyframes sway3 {
+    0%   { transform: rotate(48deg); }
+    50%  { transform: rotate(40deg); }
+    100% { transform: rotate(48deg); }
+}
+
+@keyframes sway2 {
+    0%   { transform: rotate(-5deg); }
+    50%  { transform: rotate(5deg); }
+    100% { transform: rotate(-5deg); }
+}
+
+@keyframes sway1 {
+    0%   { transform: rotate(5deg); }
+    50%  { transform: rotate(-5deg); }
+    100% { transform: rotate(5deg); }
+}
+
+@keyframes trunk_blooming {
+    0%   { transform: scaleY(0); }
+    100% { transform: scaleY(1); }
+}
+
+@keyframes petal_blooming {
+    0%   { transform: scaleY(0); }
+    100% { transform: scaleY(1); }
+}
+
+body {
+    background-color: #1e1e1e;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+}
+
+.container {
+    display: block;
+    justify-self: center;
+    align-self: center;
+    height: 100vh;
+    width: 310px
+}
+
+.rose {
+    position: relative;
+    height: 60vh;
+    width: 100%;
+}
+
+.petal .one, .two, .three, .four, .five, .six, .seven, .eight {
+    position: absolute;
+    opacity: 0.9;
+    box-shadow: 0 0 10px rgb(203, 42, 80);
+}
+
+.petal .one {
+    transform: rotate(-10deg);
+    top: 43%;
+    left: 32%;
+    width: 56px;
+    height: 72px;
+    background: linear-gradient(180deg, 
+    #f2a7be 0%, 
+    #d07b7b 10%, 
+    #e00d0d 40%, 
+    #c00711 70%, 
+    #930606 100%
+  );
+    border-radius: 3px 50px 3px 40px;
+    z-index: 8;
+    animation: sway1 5s infinite;
+
+}
+
+.petal .two {
+    transform: rotate(10deg);
+    top: 43%;
+    right: 29%;
+    width: 60px;
+    height: 72px;
+    background: linear-gradient(180deg, 
+    #f2a7be 0%, 
+    #d07b7b 10%, 
+    #e00d0d 40%, 
+    #c00711 70%, 
+    #930606 100%
+  );
+    border-radius: 60px 5px 40px 20px;
+    z-index: 7;
+    animation: sway1 5s infinite;
+
+}
+
+.petal .three {
+    transform: rotate(-10deg);
+    top: 40%;
+    left: 35%;
+    width: 60px;
+    height: 89px;
+    background: linear-gradient(180deg, 
+    #f2a7be 0%, 
+    #d07b7b 10%, 
+    #e00d0d 40%, 
+    #c00711 70%, 
+    #930606 100%
+  );
+    border-radius: 5px 100px 30px 75px;
+    z-index: 5;
+    animation: sway2 5s infinite;
+
+}
+
+.petal .four {
+    transform: rotate(10deg);
+    top: 40%;
+    right: 31%;
+    width: 60px;
+    height: 89px;
+    background: linear-gradient(180deg, 
+    #f2a7be 0%, 
+    #d07b7b 10%, 
+    #e00d0d 40%, 
+    #c00711 70%, 
+    #930606 100%
+  );
+    border-radius: 100px 3px 75px 3px;
+    z-index: 6;
+    animation: sway2 5s infinite;
+}
+
+.petal .five {
+    transform: rotate(8deg);
+    top: 38%;
+    left: 39%;
+    width: 60px;
+    height: 89px;
+    background: linear-gradient(180deg, 
+    #f2a7be 0%, 
+    #d07b7b 10%, 
+    #e00d0d 40%, 
+    #c00711 70%, 
+    #930606 100%
+  );
+    border-radius: 3px 100px 3px 75px;
+    z-index: 4;
+    animation: sway2 5s infinite;
+}
+
+.petal .six {
+    transform: rotate(-12deg);
+    top: 39%;
+    right: 36%;
+    width: 60px;
+    height: 80px;
+    background: linear-gradient(180deg, 
+    #f2a7be 0%, 
+    #d07b7b 10%, 
+    #e00d0d 40%, 
+    #c00711 70%, 
+    #930606 100%
+  );
+    border-radius: 100px 3px 75px 3px;
+    z-index: 4;
+    animation: sway1 5s infinite;
+}
+
+.petal .seven {
+    transform: rotate(12deg);
+    top: 45%;
+    left: 45%;
+    width: 50px;
+    height: 53px;
+    background: linear-gradient(180deg, 
+    #f2a7be 0%, 
+    #d07b7b 10%, 
+    #e00d0d 40%, 
+    #c00711 70%, 
+    #930606 100%
+  );
+    border-radius: 10px 100px 50px 100px;
+    z-index: 9;
+    animation: sway3 5s infinite;
+}
+
+.trunk {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 210px;
+    background: linear-gradient(180deg, 
+    #45aa1c 0%, 
+    #91c54c 10%, 
+    #74be2e 40%, 
+    #95c242 70%, 
+    #549b2b 100%
+  );
+    border-radius: 10px 20px 30px 10px;
+    box-shadow: 0 0 6px rgb(153, 212, 98);
+    z-index: 0;
+    transform-origin: bottom;
+    animation: trunk_blooming 5s ease-in-out;
+}
+
+.button_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: auto;
+}
+
+a {
+  background: linear-gradient(45deg, 
+    #45aa1c 0%, 
+    #91c54c 10%, 
+    #94d557 40%, 
+    #95c242 70%, 
+    #549b2b 100%
+  );
+  box-shadow: 0 0 3px rgb(153, 212, 98);
+  padding: 7px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #1e1e1e;
+  font-weight: bold;
+}
