@@ -71,6 +71,8 @@ body {
   overflow-x: hidden;
 }
 
+
+
 .container {
   display: block;
   position: relative;
@@ -308,7 +310,6 @@ body {
 
 .animate-on-scroll{
   opacity: 0;
-  
 }
 
 .animate-on-scroll.animate {
