@@ -53,6 +53,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-attachment: fixed;
   font-family: Arial, sans-serif;
@@ -66,8 +70,12 @@ body {
 
 .container {
   display: block;
+  position: relative;
   height: auto;
   width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
 }
 
 .sub_container {
@@ -75,6 +83,7 @@ body {
   align-items: center;
   display: flex;
   flex-direction: column;
+  scroll-snap-align: start;
   height: 100vh;
   width: 100%;
 }
@@ -94,13 +103,13 @@ body {
 
 }
 
-h1 {
+.header h1 {
     position: absolute;
     top: 36%;
     color: #f2f2f2;
     font-size: 120px;
     font-weight: bold;
-    text-shadow: 0 0 3px rgb(153, 212, 98);
+    text-shadow: 0 0 3px rgb(255, 255, 255);
     z-index: 1;
     animation: fadeInBlur 3s ease-in;
 }
@@ -115,7 +124,14 @@ h1 {
 .petal .one, .two, .three, .four, .five, .six, .seven, .eight {
     position: absolute;
     opacity: 0.9;
-
+    background: linear-gradient(180deg, 
+    #f2a7be 0%, 
+    #d07b7b 10%, 
+    #e00d0d 40%, 
+    #c00711 70%, 
+    #930606 100%
+  );
+    box-shadow: 0 0 10px rgb(203, 42, 80);
 }
 
 .petal .one {
@@ -124,15 +140,8 @@ h1 {
     left: 32%;
     width: 56px;
     height: 72px;
-    background: linear-gradient(180deg, 
-    #f2a7be 0%, 
-    #d07b7b 10%, 
-    #e00d0d 40%, 
-    #c00711 70%, 
-    #930606 100%
-  );
     border-radius: 3px 50px 3px 40px;
-    box-shadow: 0 0 10px rgb(203, 42, 80);
+
     z-index: 8;
     animation: sway1 5s infinite;
 }
@@ -144,15 +153,7 @@ h1 {
     right: 29%;
     width: 60px;
     height: 72px;
-    background: linear-gradient(180deg, 
-    #f2a7be 0%, 
-    #d07b7b 10%, 
-    #e00d0d 40%, 
-    #c00711 70%, 
-    #930606 100%
-  );
     border-radius: 60px 5px 40px 5px;
-    box-shadow: 0 0 10px rgb(203, 42, 80);
     z-index: 7;
     animation: sway1 5s infinite;
 }
@@ -163,15 +164,7 @@ h1 {
     left: 35%;
     width: 60px;
     height: 90px;
-    background: linear-gradient(180deg, 
-    #f2a7be 0%, 
-    #d07b7b 10%, 
-    #e00d0d 40%, 
-    #c00711 70%, 
-    #930606 100%
-  );
     border-radius: 5px 100px 30px 75px;
-    box-shadow: 0 0 10px rgb(203, 42, 80);
     z-index: 5;
     animation: sway2 5s infinite;
 }
@@ -182,15 +175,7 @@ h1 {
     right: 31%;
     width: 60px;
     height: 89px;
-    background: linear-gradient(180deg, 
-    #f2a7be 0%, 
-    #d07b7b 10%, 
-    #e00d0d 40%, 
-    #c00711 70%, 
-    #930606 100%
-  );
     border-radius: 100px 3px 75px 3px;
-    box-shadow: 0 0 10px rgb(203, 42, 80);
     z-index: 6;
     animation: sway2 5s infinite;
 }
@@ -201,15 +186,7 @@ h1 {
     left: 39%;
     width: 60px;
     height: 89px;
-    background: linear-gradient(180deg, 
-    #f2a7be 0%, 
-    #d07b7b 10%, 
-    #e00d0d 40%, 
-    #c00711 70%, 
-    #930606 100%
-  );
     border-radius: 3px 100px 3px 75px;
-    box-shadow: 0 0 10px rgb(203, 42, 80);
     z-index: 4;
     animation: sway2 5s infinite;
 }
@@ -220,15 +197,7 @@ h1 {
     right: 36%;
     width: 60px;
     height: 80px;
-    background: linear-gradient(180deg, 
-    #f2a7be 0%, 
-    #d07b7b 10%, 
-    #e00d0d 40%, 
-    #c00711 70%, 
-    #930606 100%
-  );
     border-radius: 100px 3px 75px 3px;
-    box-shadow: 0 0 10px rgb(203, 42, 80);
     z-index: 4;
     animation: sway1 5s infinite;
 }
@@ -240,15 +209,7 @@ h1 {
   left: 43%;
   width: 50px;
   height: 53px;
-  background: linear-gradient(180deg, 
-  #f2a7be 0%, 
-  #d07b7b 10%, 
-  #e00d0d 40%, 
-  #c00711 70%, 
-  #930606 100%
-);
   border-radius: 10px 100px 50px 100px;
-  box-shadow: 0 0 10px rgb(203, 42, 80);
   z-index: 0;
   animation: sway3 5s infinite;
 }
@@ -309,7 +270,7 @@ h1 {
   width: 100%;
 }
 
-p {
+.button_container p {
   font-size: 16px;
   font-weight: bold;
   text-decoration: none;
@@ -318,3 +279,4 @@ p {
   animation: bipping 4s infinite,
              fadeInBlur 3s ease-in;
 }
+

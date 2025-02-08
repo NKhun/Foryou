@@ -1,6 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+        // รอให้ DOM โหลดเสร็จ
+        document.addEventListener("DOMContentLoaded", function() {
+          // เปลี่ยน query ให้เลือก element ที่มีคลาส .sub_container
+          const sections = document.querySelectorAll(".sub_container");
+          let currentSection = 0;
+      
+          document.addEventListener("keydown", function(e) {
+            if (e.key === "ArrowDown") {
+              if (currentSection < sections.length - 1) {
+                currentSection++;
+                sections[currentSection].scrollIntoView({ behavior: "smooth" });
+              }
+            } else if (e.key === "ArrowUp") {
+              if (currentSection > 0) {
+                currentSection--;
+                sections[currentSection].scrollIntoView({ behavior: "smooth" });
+              }
+            }
+          });
+        });
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
@@ -29,7 +51,9 @@
             <br>
             <div class="button_container"><p>Scroll Down</p></div>
         </div>
-        <div class="sub_container" id="two">under construction</div>
+        <div class="sub_container" id="two">
+                asdfas
+    </div>
     </div>
 </body>
 </html>
