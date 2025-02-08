@@ -1,59 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script>
-        // รอให้ DOM โหลดเสร็จ
-        document.addEventListener("DOMContentLoaded", function() {
-          // เปลี่ยน query ให้เลือก element ที่มีคลาส .sub_container
-          const sections = document.querySelectorAll(".sub_container");
-          let currentSection = 0;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
+  <title>My Animation Page</title>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // เลือก container ที่มี scroll
+      const container = document.querySelector('.container');
       
-          document.addEventListener("keydown", function(e) {
-            if (e.key === "ArrowDown") {
-              if (currentSection < sections.length - 1) {
-                currentSection++;
-                sections[currentSection].scrollIntoView({ behavior: "smooth" });
-              }
-            } else if (e.key === "ArrowUp") {
-              if (currentSection > 0) {
-                currentSection--;
-                sections[currentSection].scrollIntoView({ behavior: "smooth" });
-              }
-            }
-          });
+      // ส่วนเลื่อนหน้าด้วยแป้นลูกศร
+      const sections = document.querySelectorAll(".sub_container");
+      let currentSection = 0;
+  
+      document.addEventListener("keydown", function(e) {
+        if (e.key === "ArrowDown") {
+          if (currentSection < sections.length - 1) {
+            currentSection++;
+            sections[currentSection].scrollIntoView({ behavior: "smooth" });
+          }
+        } else if (e.key === "ArrowUp") {
+          if (currentSection > 0) {
+            currentSection--;
+            sections[currentSection].scrollIntoView({ behavior: "smooth" });
+          }
+        }
+      });
+  
+      // สร้าง observer กำหนด root เป็น container
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+            observer.unobserve(entry.target);
+          }
         });
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
-    <title><3</title>
+      }, {
+        root: container,
+        threshold: 0.1  // เมื่อ element ปรากฏใน container อย่างน้อย 10%
+      });
+  
+      // เริ่มจับ element .animate-on-scroll
+      document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
 </head>
 <body>
-    <div class="container">
-        <div class="sub_container" id="one">
-            <div class="header"><h1>14.02</h1></div>
-            <div class="rose">
-                <div class="petal">
-                    <div class="petal one"></div>
-                    <div class="petal two"></div>
-                    <div class="petal three"></div>
-                    <div class="petal four"></div>
-                    <div class="petal five"></div>
-                    <div class="petal six"></div>
-                    <div class="petal seven"></div>
-                    <div class="petal eight"></div>
-                </div>
-                <div class="leaf">
-                    <div class="leaf one"></div>
-                </div >
-                <div class="trunk"></div>
-            </div>
-            <br>
-            <div class="button_container"><p>Scroll Down</p></div>
+  <div class="container">
+    <div class="sub_container" id="one">
+      <div class="header"><h1>14.02</h1></div>
+      <div class="rose">
+        <div class="petal">
+          <div class="petal one"></div>
+          <div class="petal two"></div>
+          <div class="petal three"></div>
+          <div class="petal four"></div>
+          <div class="petal five"></div>
+          <div class="petal six"></div>
+          <div class="petal seven"></div>
+          <div class="petal eight"></div>
         </div>
-        <div class="sub_container" id="two">
-                asdfas
+        <div class="leaf">
+          <div class="leaf one"></div>
+        </div>
+        <div class="trunk"></div>
+      </div>
+      <br>
+      <div class="button_container"><p>Scroll Down</p></div>
     </div>
+    <div class="sub_container" id="two">
+      <h1 class="context_one animate-on-scroll">Happy Valentine's Day !</h1> 
+    </div>
+    <div class="sub_container" id="three">
+        <h1 class="context_two animate-on-scroll">A special day to cherish <br>and share our love with the ones <br> who mean the most to us.</h1> 
+    </div>
+    <div class="sub_container" id="four">
+        <h1 class="context_three animate-on-scroll">So...</h1>
+    </div>
+    <div class="sub_container" id="five">
+        <h1 class="context_four animate-on-scroll">Will you be my Valentine ?</h1>
     </div>
 </body>
 </html>
