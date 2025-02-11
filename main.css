@@ -296,6 +296,12 @@ body {
   text-align: center;
 }
 
+.mail {
+  width: 80vw;
+  animation: sway1 4s infinite;
+  margin-bottom: 10px;
+}
+
 .context_three {
   color: #930606;
   font-size: 3em;
@@ -314,5 +320,50 @@ body {
 
 .animate-on-scroll.animate {
   opacity: 1;
-  animation: fadeInBlur 1.5s ease-in-out;
+  animation: fadeInBlur 1s ease-in-out;
+}
+
+.button_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 10vh;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.button_container #yes{
+  background: #930606;
+  border: 3px solid #930606;
+  color: white;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 8px 2px;
+  cursor: pointer;
+  border-radius: 14px;
+  z-index: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.button_container #yes:hover {
+  background: #f2f2f2;
+  color: #930606;
+}
+
+.button_container #no{
+  border: none;
+  color: #930606;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 8px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  z-index: 0;
+  animation: bipping 4s infinite,
+             fadeInBlur 3s ease-in;
 }
