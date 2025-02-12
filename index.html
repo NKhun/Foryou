@@ -48,6 +48,11 @@
         observer.observe(el);
       });
     });
+    document.getElementById('goToThree').addEventListener('click', function(event) {
+  event.preventDefault(); // ป้องกันการ jump ไปยัง #three
+  document.getElementById('three').scrollIntoView({ behavior: 'smooth' });
+});
+
   </script>
 </head>
 <body>
@@ -71,14 +76,15 @@
         <div class="trunk"></div>
       </div>
       <br>
-      <div class="button_container"><p>Scroll Down</p></div>
+      <div class="button_container"><p>เลื่อนลง</p></div>
     </div>
     <div class="sub_container" id="two">
-      <h1 class="context_one animate-on-scroll">Happy Valentine's Day !</h1> 
+      <img class="mail" src="mail.svg" alt="">
+      <a href="#three" id="goToThree" class="context_one animate-on-scroll">You've got one letter!</a> 
     </div>
     <div class="sub_container" id="three">
-      <img class="mail" src="mail.svg" alt="">
-      <h1 class="context_two animate-on-scroll">ผมมีอะไรจะมาบอก</h1> 
+      <h1 class="context_two animate-on-scroll">Happy Valentine's Day !</h1> 
+      <p class="description animate-on-scroll">สุขสันต์วันวาเลนไทน์คับบ</p>
     </div>
     <div class="sub_container" id="four">
         <h1 class="context_three animate-on-scroll">So...</h1>

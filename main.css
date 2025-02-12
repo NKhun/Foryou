@@ -71,12 +71,9 @@ body {
   overflow-x: hidden;
 }
 
-
-
 .container {
   display: block;
   position: relative;
-  height: auto;
   width: 100%;
   height: 100vh;
   overflow-y: scroll;
@@ -94,9 +91,16 @@ body {
 }
 
 #one {
-  background: linear-gradient(135deg, #1a1a2e, #3b2c58, #9055a2);
+  background: linear-gradient(180deg, #1a1a2e, #3b2c58, #9055a2);
 }
 
+#two {
+  background: linear-gradient(180deg, #9055a2, #bb6ec5, #d291bc);
+}
+
+#three { 
+  background: linear-gradient(180deg, #d291bc, #e8a7d2, #f5a9d0);
+}
 
 .header {
     display: flex;
@@ -286,20 +290,34 @@ body {
 }
 
 .context_one {
-  color: #930606;
-  font-size: 2em;
-}
-
-.context_two {
-  color: #930606;
+  color: white;
   font-size: 1.4em;
-  text-align: center;
+  background-color: #ffa0c3;
+  padding: 8px;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 2px 2px 1em 2px #ffa0c3;
 }
 
 .mail {
-  width: 80vw;
+  height: 20vh;
   animation: sway1 4s infinite;
-  margin-bottom: 10px;
+  margin: 30px 0;
+}
+
+
+.description {
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.context_two {
+  color: white;
+  font-size: 2em;
+  text-align: center;
+  margin: 0 10px;
+
 }
 
 .context_three {
@@ -348,7 +366,7 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
-.button_container #yes:hover {
+.button_container #yes:hover, #yes:active{
   background: #f2f2f2;
   color: #930606;
 }
