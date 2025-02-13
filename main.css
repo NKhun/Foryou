@@ -102,7 +102,7 @@ body {
   background: linear-gradient(180deg, #d291bc, #e8a7d2, #ffa0c3);
 }
 
-#four {
+#four, #five, #six{
   background: linear-gradient(180deg, #ffa0c3, #e8a7d2, #ffa0c3);
 }
 
@@ -341,9 +341,14 @@ body {
 }
 
 .context_four {
-  color: #930606;
+  color: white;
   font-size: 2em;
   text-align: center;
+}
+
+.context_five {
+  color: white;
+  font: 1.4em;
 }
 
 .animate-on-scroll{
@@ -366,9 +371,9 @@ body {
 }
 
 .button_container #yes{
-  background: #930606;
-  border: 3px solid #930606;
-  color: white;
+  background: white;
+  border: 3px solid white;
+  color: #ffa0c3;
   padding: 10px 24px;
   text-align: center;
   text-decoration: none;
@@ -381,21 +386,23 @@ body {
 }
 
 .button_container #yes:hover, #yes:active{
-  background: #f2f2f2;
-  color: #930606;
+  background: rgba(255, 191, 214, 0.767);
+  color: white;
+
 }
 
 .button_container #no{
   border: none;
-  color: #930606;
+  color: white;
   padding: 10px 24px;
   text-align: center;
   text-decoration: none;
+  background-color: rgba(255, 191, 214, 0.767);
   font-size: 16px;
   margin: 8px 2px;
   cursor: pointer;
   border-radius: 10px;
   z-index: 0;
-  animation: bipping 4s infinite,
-             fadeInBlur 3s ease-in;
+  transition: all 0.3 ease-in-out;
 }
+
