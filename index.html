@@ -48,11 +48,26 @@
         observer.observe(el);
       });
     });
-    document.getElementById('goToThree').addEventListener('click', function(event) {
-  event.preventDefault(); // ป้องกันการ jump ไปยัง #three
-  document.getElementById('three').scrollIntoView({ behavior: 'smooth' });
-});
 
+    let startTime = new Date('2024-02-14T00:00:00').getTime();
+
+    function updateElapsedTime() {
+      let now = new Date().getTime();
+      let timePassed = now - startTime;
+
+      // คำนวณจำนวนวัน ชั่วโมง นาที และวินาที
+      let days = Math.floor(timePassed / (1000 * 60 * 60 * 24));
+      let hours = Math.floor((timePassed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      let minutes = Math.floor((timePassed % (1000 * 60 * 60)) / (1000 * 60));
+      let seconds = Math.floor((timePassed % (1000 * 60)) / 1000);
+
+      // แสดงผลในรูปแบบ "วัน ชั่วโมง นาที วินาที"
+      document.getElementById('elapsedTime').textContent = 
+        `${days} วัน ${hours} ชั่วโมง ${minutes} นาที ${seconds} วินาที`;
+    }
+
+    // อัพเดตเวลาทุก 1 วินาที
+    setInterval(updateElapsedTime, 1000);
   </script>
 </head>
 <body>
@@ -76,18 +91,21 @@
         <div class="trunk"></div>
       </div>
       <br>
-      <div class="button_container"><p>เลื่อนลง</p></div>
+      <div class="button_container"><p>swipe down</p></div>
     </div>
     <div class="sub_container" id="two">
       <img class="mail" src="mail.svg" alt="">
-      <a href="#three" id="goToThree" class="context_one animate-on-scroll">You've got one letter!</a> 
+      <p href="#three" id="goToThree" class="context_one animate-on-scroll">You've got one letter!</p>
+
     </div>
     <div class="sub_container" id="three">
       <h1 class="context_two animate-on-scroll">Happy Valentine's Day !</h1> 
       <p class="description animate-on-scroll">สุขสันต์วันวาเลนไทน์คับบ</p>
     </div>
     <div class="sub_container" id="four">
-        <h1 class="context_three animate-on-scroll">So...</h1>
+      <h1 class="context_three animate-on-scroll">It's been a long time <br>since we know each other!</h1>
+      <p class="description animate-on-scroll">นานแล้วนะที่เรารู้จักกัน</p>
+      <div class="timer animate-on-scroll" id="elapsedTime">00 วัน 00 ชั่วโมง 00 นาที 00 วินาที</div>
     </div>
     <div class="sub_container" id="five">
         <h1 class="context_four animate-on-scroll">Will you be my Valentine?</h1>

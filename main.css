@@ -99,7 +99,11 @@ body {
 }
 
 #three { 
-  background: linear-gradient(180deg, #d291bc, #e8a7d2, #f5a9d0);
+  background: linear-gradient(180deg, #d291bc, #e8a7d2, #ffa0c3);
+}
+
+#four {
+  background: linear-gradient(180deg, #ffa0c3, #e8a7d2, #ffa0c3);
 }
 
 .header {
@@ -297,6 +301,7 @@ body {
   border-radius: 10px;
   text-decoration: none;
   box-shadow: 2px 2px 1em 2px #ffa0c3;
+  transition: all 0.3s ease-in-out;
 }
 
 .mail {
@@ -321,9 +326,18 @@ body {
 }
 
 .context_three {
-  color: #930606;
-  font-size: 3em;
+  color: white;
+  font-size: 1.3em;
   text-align: center;
+}
+
+.timer {
+  color: #ffa0c3;
+  font-size: 1.3em;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.878);
+  padding: 8px;
+  border-radius: 10px;
 }
 
 .context_four {
