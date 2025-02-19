@@ -8,6 +8,9 @@
   <meta property="og:description" content="To you my will to live and love">
   <link rel="stylesheet" href="main.css">
   <title><3</title>
+  
+</head>
+<body>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       // เลือก container ที่มี scroll
@@ -31,7 +34,7 @@
         }
       });
   
-      // สร้าง observer กำหนด root เป็น container
+      // observer กำหนด root container
       const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -41,37 +44,35 @@
         });
       }, {
         root: container,
-        threshold: 0.1  // เมื่อ element ปรากฏใน container อย่างน้อย 10%
+        threshold: 0.1
       });
   
-      // เริ่มจับ element .animate-on-scroll
+      // จับ element .animate-on-scroll
       document.querySelectorAll('.animate-on-scroll').forEach(el => {
         observer.observe(el);
       });
     });
 
-    let startTime = new Date('2024-02-15T12:45:00').getTime();
+    // นาฬิกาบอกเวลาว่าอยู่ด้วยกันมากี่ปีแล้ว
+    let startTime = new Date('2024-02-15T12:45:00').getTime(); //เปลี่ยนวันที่เจอกันตรงนี้
 
     function updateElapsedTime() {
       let now = new Date().getTime();
       let timePassed = now - startTime;
 
-      // คำนวณจำนวนวัน ชั่วโมง นาที และวินาที
+
       let days = Math.floor(timePassed / (1000 * 60 * 60 * 24));
       let hours = Math.floor((timePassed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       let minutes = Math.floor((timePassed % (1000 * 60 * 60)) / (1000 * 60));
       let seconds = Math.floor((timePassed % (1000 * 60)) / 1000);
 
-      // แสดงผลในรูปแบบ "วัน ชั่วโมง นาที วินาที"
+
       document.getElementById('elapsedTime').textContent = 
         `${days} วัน ${hours} ชั่วโมง ${minutes} นาที ${seconds} วินาที`;
     }
 
-    // อัพเดตเวลาทุก 1 วินาที
     setInterval(updateElapsedTime, 1000);
   </script>
-</head>
-<body>
   <div class="container">
     <div class="sub_container" id="one">
       <div class="header"><h1>14.02</h1></div>
@@ -86,7 +87,7 @@
           <div class="petal seven"></div>
           <div class="petal eight"></div>
         </div>
-        <div class="leaf">
+        <div class="leaf"> <!--ใบ-->
           <div class="leaf one"></div>
         </div>
         <div class="trunk"></div>
@@ -94,24 +95,27 @@
       <br>
       <div class="button_container"><p>swipe down</p></div>
     </div>
+    <!--หน้าแรก-->
     <div class="sub_container" id="two">
       <img class="mail" src="mail.svg" alt="">
       <p href="#three" id="goToThree" class="context_one animate-on-scroll">You've got one letter!</p>
-
     </div>
+    <!--หน้าสอง-->
     <div class="sub_container" id="three">
       <h1 class="context_two animate-on-scroll">Happy Valentine's Day !</h1> 
       <p class="description animate-on-scroll">สุขสันต์วันวาเลนไทน์คับบ</p>
     </div>
+    <!--หน้าสาม-->
     <div class="sub_container" id="four">
       <h1 class="context_three animate-on-scroll">It's been a long time <br>since we know each other!</h1>
       <p class="description animate-on-scroll">นานแล้วนะที่เรารู้จักกัน</p>
       <div class="timer animate-on-scroll" id="elapsedTime">00 วัน 00 ชั่วโมง 00 นาที 00 วินาที</div>
     </div>
+    <!--หน้าสี่-->
     <div class="sub_container" id="five">
         <h1 class="context_four animate-on-scroll">ผมมีอะไรอยากจะถาม...</h1>
-        
     </div>
+    <!--หน้าห้า-->
     <div  class="sub_container" id="six">
       <h1 class="context_four animate-on-scroll">Can I be your valentine?</h1>
       <p class="description animate-on-scroll">ผมเป็นมากกว่าเพื่อนได้มั้ย</p>
